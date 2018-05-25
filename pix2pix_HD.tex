@@ -137,15 +137,24 @@
 \end{frame}
 
 \begin{frame}{Improving Photorealism and Resolution}{Improved Adversarial Loss and Full Objective}
+\setbeamercolor{uppercol}{fg=white,bg=green!75!black}%
+\setbeamercolor{lowercol}{fg=black,bg=green!20}%
+\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{	Improved Adversarial Loss}
 
-	Improved adversarial loss:
-	\begin{equation}
-	\mathcal{L}_{FM}(G,D_k)=\mathbb{E}_{(s,x)} \sum_{i=1}^T \frac{1}{N_i}[||D_k^{(i)}(s,x)-D_{k}^{(i)}(s,G(s))||_1]
-	\end{equation}
-	The full objective:
-	\begin{equation}
+\begin{equation}
+\mathcal{L}_{FM}(G,D_k)=\mathbb{E}_{(s,x)} \sum_{i=1}^T \frac{1}{N_i}[||D_k^{(i)}(s,x)-D_{k}^{(i)}(s,G(s))||_1]
+\end{equation}
+\end{beamerboxesrounded}
+\setbeamercolor{uppercol}{fg=white,bg=blue!75!black}%
+\setbeamercolor{lowercol}{fg=black,bg=blue!20}%
+\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{	Full Objective }
+
+\begin{equation}
 \min_G ((\max_{D_1,D_2,D_3}\sum_{k=1,2,3} \mathcal{L}_{GAN}(G,D_k)))+\lambda \sum_{k=1,2,3}\mathcal{L}_{FM}(G,D_K)
-	\end{equation}
+\end{equation}
+\end{beamerboxesrounded}
+
+
 \end{frame}
 
 \begin{frame}{Using Instance Maps}
@@ -254,8 +263,17 @@ The comparison results at \textbf{different time intervals} are shown as aforeme
 \begin{frame}{Analysis of Proposed Model}{Analysis of The Loss Function}
 \begin{figure}
 	\centering
-	\includegraphics[height=0.8\textheight]{images/result_1}
+	\includegraphics[height=0.6\textheight]{images/result_1}
 \end{figure}
+\setbeamercolor{uppercol}{fg=white,bg=blue!75!black}%
+\setbeamercolor{lowercol}{fg=black,bg=blue!20}%
+\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{Perceptual Loss }
+	
+\begin{equation}
+\mathcal{L}=\lambda\sum_{i=1}^N \frac{1}{M_i}[||F^{(i)}(x)-F^{(i)}(G(s))||_1]
+\end{equation}
+
+\end{beamerboxesrounded}
 \end{frame}
 
 
