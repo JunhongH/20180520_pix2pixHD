@@ -77,7 +77,7 @@
 	\end{figure}
 \setbeamercolor{uppercol}{fg=white,bg=blue!75!black}%
 \setbeamercolor{lowercol}{fg=black,bg=blue!20}%
-\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{The original value function:}
+\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{The value function of original GANs:}
 	\begin{equation}
 	\begin{aligned}
 	\mathcal{L}_{GAN}(G,D)=&\mathbb{E}_{y}[\log D(y)]\\+&\mathbb{E}_{z}[\log(1-D(G(z)))].
@@ -86,7 +86,7 @@
 \end{beamerboxesrounded}
 \setbeamercolor{uppercol}{fg=white,bg=green!75!black}%
 \setbeamercolor{lowercol}{fg=black,bg=green!20}%
-\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{The value function:}
+\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{The value function of cGANs:}
 \begin{equation}
 \begin{aligned}
 	\mathcal{L}_{cGAN}(G,D)=&\mathbb{E}_{x,y}[\log D(x,y)]\\+&\mathbb{E}_{x}[\log(1-D(x,G(x)))].
@@ -107,7 +107,7 @@
 	\item
 	The resolution of the generated images is \textbf{up to $256\times256$};
 	\item 
-	When we use it to generate higher-resolution images, its \textbf{training is unstable}, and \textbf{the quality of results is unsatisfactory}.
+	When we use it to generate high-resolution images, its \textbf{training is unstable}, and \textbf{the quality of results is unsatisfactory}.
 \end{itemize}
 \end{beamerboxesrounded}
 \end{frame}
