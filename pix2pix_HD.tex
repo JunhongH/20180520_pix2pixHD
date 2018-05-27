@@ -165,12 +165,13 @@ where $D_k^{(i)}$ denotes the $i$th-layer feature extractor of $D_k$.
 \begin{frame}{Using Instance Maps}
 	\begin{figure}
 		\centering
+		\includegraphics[height=0.3\textheight]{images/instance_maps}
+	\end{figure}
+	\begin{figure}
+		\centering
 		\includegraphics[height=0.3\textheight]{images/instance_result}
 	\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[height=0.3\textheight]{images/instance_maps}
-\end{figure}
+
 \setbeamercolor{uppercol}{fg=white,bg=blue!75!black}%
 \setbeamercolor{lowercol}{fg=black,bg=blue!20}%
 \begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{Implementation:}
@@ -228,13 +229,19 @@ A pixel in the instance boundary map is \textbf{1} if its object ID \textbf{is d
 	\end{figure}
 \begin{figure}
 	\centering
-	\includegraphics[height=0.25\textheight]{images/table_1}
+	\includegraphics[height=0.2\textheight]{images/table_1}
 \end{figure}
 
 \setbeamercolor{uppercol}{fg=white,bg=blue!75!black}%
 \setbeamercolor{lowercol}{fg=black,bg=blue!20}%
 \begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{Details:}
- PSPNet\footcite{Pyramid scene parsing network （CVPR 2017)} is used  to predict the ground true label map with the generated photo-realistic images.
+	\begin{itemize}
+		\item 
+ PSPNet\footcite{Pyramid scene parsing network （CVPR 2017)} is used  to \textbf{predict semantic label maps} with the generated photo-realistic images.
+ 		\item
+ 		Oracle denotes that the original images are fed into PSPNet.
+	\end{itemize}
+
 \end{beamerboxesrounded}
 
 \end{frame}
@@ -248,11 +255,19 @@ A pixel in the instance boundary map is \textbf{1} if its object ID \textbf{is d
 \setbeamercolor{uppercol}{fg=white,bg=blue!75!black}%
 \setbeamercolor{lowercol}{fg=black,bg=blue!20}%
 \begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{Details: }
-Each cell lists the percentage where our result is preferred over the other method.
+	\begin{itemize}
+	\item
+	\textbf{ Unlimited time} is given to select which image looks more natural.
+	\item
+	All 500 Cityscapes test images are compared 10 times, resulting in \textbf{ 5,000 human judgments for each method}.
+	\item
+	Each cell lists the percentage where our result is preferred over the other method (i.e.,\ \textbf{preference rate}).
+	\end{itemize}
+
 \end{beamerboxesrounded}
 \end{frame}
 
-\begin{frame}{Human Perceptual Study}{Unlimited Time}
+\begin{frame}{Human Perceptual Study}{Limited Time}
 \begin{figure}
 	\centering
 	\includegraphics[height=0.45\textheight]{images/limite_time}
@@ -330,7 +345,8 @@ Pairwise comparison results on the Cityscapes dataset.
 \setbeamercolor{uppercol}{fg=white,bg=blue!75!black}%
 \setbeamercolor{lowercol}{fg=black,bg=blue!20}%
 \begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{Comparison: }
-The segmantation scores on Cityscapes dataset.
+The segmentation scores on Cityscapes dataset.
+% Using multi-scale discriminators helps improve the segmentation scores.
 \end{beamerboxesrounded}
 \end{frame}
 
