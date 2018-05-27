@@ -98,17 +98,12 @@
 \begin{frame}{The pix2pix Baseline }
 \begin{figure}
 	\centering
-	\includegraphics[height=0.4\textheight]{images/baseline}
+	\includegraphics[height=0.4\textheight]{images/pix2pix}
 \end{figure}
 \setbeamercolor{uppercol}{fg=white,bg=red!75!black}%
 \setbeamercolor{lowercol}{fg=black,bg=red!20}%
 \begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{Existing problems in this baseline:}
-\begin{itemize}
-	\item
-	The resolution of the generated images is \textbf{up to $256\times256$};
-	\item 
-	When we use it to generate high-resolution images, its \textbf{training is unstable}, and \textbf{the quality of results is unsatisfactory}.
-\end{itemize}
+	When the pix2pix framework is tested to generate high-resolution images, its \textbf{training is unstable}, and \textbf{the quality of results is unsatisfactory}.
 \end{beamerboxesrounded}
 \end{frame}
 
@@ -148,7 +143,7 @@
 \begin{frame}{Improving Photorealism and Resolution}{Improved Adversarial Loss and Full Objective}
 \setbeamercolor{uppercol}{fg=white,bg=green!75!black}%
 \setbeamercolor{lowercol}{fg=black,bg=green!20}%
-\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{	Improved adversarial loss:}
+\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{Discriminator feature matching loss}
 
 \begin{equation}
 \mathcal{L}_{FM}(G,D_k)=\mathbb{E}_{(x,y)} \sum_{i=1}^T \frac{1}{N_i}[||D_k^{(i)}(x,y)-D_{k}^{(i)}(x,G(x))||_1],
