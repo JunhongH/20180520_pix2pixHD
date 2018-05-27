@@ -158,7 +158,15 @@ where $D_k^{(i)}$ denotes the $i$th-layer feature extractor of $D_k$.
 \min_G ((\max_{D_1,D_2,D_3}\sum_{k=1,2,3} \mathcal{L}_{GAN}(G,D_k)))+\lambda \sum_{k=1,2,3}\mathcal{L}_{FM}(G,D_K).
 \end{equation}
 \end{beamerboxesrounded}
-
+\setbeamercolor{uppercol}{fg=white,bg=blue!75!black}%
+\setbeamercolor{lowercol}{fg=black,bg=blue!20}%
+\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{Perceptual loss: (In implementation details) }
+	
+	\begin{equation}
+	\mathcal{L}=\lambda\sum_{i=1}^N \frac{1}{M_i}[||F^{(i)}(y)-F^{(i)}(G(x))||_1],
+	\end{equation} 
+%	which slightly improves the results.
+\end{beamerboxesrounded}
 
 \end{frame}
 
@@ -275,24 +283,16 @@ A pixel in the instance boundary map is \textbf{1} if its object ID \textbf{is d
 \setbeamercolor{uppercol}{fg=white,bg=blue!75!black}%
 \setbeamercolor{lowercol}{fg=black,bg=blue!20}%
 \begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{Details: }
-The comparison results at \textbf{different time intervals} are shown as aforementioned figure.
+The comparison results at \textbf{different time intervals} are shown as the figure.
 \end{beamerboxesrounded}
 \end{frame}
 
 \begin{frame}{Analysis of the Proposed Model}{Analysis of the Loss Function}
 \begin{figure}
 	\centering
-	\includegraphics[height=0.6\textheight]{images/result_1}
+	\includegraphics[height=0.51\textheight]{images/result_1}
 \end{figure}
-\setbeamercolor{uppercol}{fg=white,bg=blue!75!black}%
-\setbeamercolor{lowercol}{fg=black,bg=blue!20}%
-\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=false]{Perceptual loss: }
-	
-\begin{equation}
-\mathcal{L}=\lambda\sum_{i=1}^N \frac{1}{M_i}[||F^{(i)}(y)-F^{(i)}(G(x))||_1]
-\end{equation} 
 
-\end{beamerboxesrounded}
 \end{frame}
 
 
